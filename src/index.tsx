@@ -7,6 +7,7 @@ import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
 
 import Layout from './Layout';
 import Home from './pages/Home/Home';
+import NewProduct from './pages/NewProduct/NewProduct';
 
 const queryClient = new QueryClient();
 
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/admin',
-        element: <p>adimn page</p>,
+        element: <NewProduct></NewProduct>,
       },
       { path: '/cart', element: <p>cart page</p> },
       { path: 'product/:id', element: <p>product detail</p> },
