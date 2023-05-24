@@ -3,7 +3,7 @@ export type Product = {
   description: string;
   hotsale: boolean;
   imgs: string[];
-  options: string[] | string;
+  options: string[];
   title: string;
   price: number;
   categorie: string;

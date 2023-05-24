@@ -9,7 +9,7 @@ const DEFUALT_PRODUCT_STATE = {
   price: 0,
   hotsale: false,
   categorie: '',
-  options: '',
+  options: [],
 };
 
 const NewProduct = () => {
