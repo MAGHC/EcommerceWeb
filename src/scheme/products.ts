@@ -8,3 +8,5 @@ export type Product = {
   price: number;
   categorie: string;
 };
+
+export type NewProductType = Omit<Product, 'id' | 'imgs'>;
