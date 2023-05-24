@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, get, child, set } from 'firebase/database';
+import { getDatabase, ref, get, child, set, remove } from 'firebase/database';
 import { NewProductType, Product } from '../scheme/products';
 import {
   getDownloadURL,
@@ -80,4 +80,8 @@ export async function getCart(): Promise<Cart[] | []> {
       return [];
     }
   });
+}
+
+export async function removeCartItem(id: string) {
+  await remove(child(dbRef, `carts/user/${id}`));
 }

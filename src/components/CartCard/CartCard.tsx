@@ -1,5 +1,5 @@
 import { Cart } from '../../scheme/cart';
-import { addAndEditCart } from '../../service/firebase';
+import { addAndEditCart, removeCartItem } from '../../service/firebase';
 import style from './CartCard.module.css';
 
 const CartCard = ({ cart }: { cart: Cart }) => {
@@ -9,6 +9,11 @@ const CartCard = ({ cart }: { cart: Cart }) => {
   const handleQuantityMinus = () => {
     if (cart.quantity < 2) return;
     addAndEditCart(cart, cart.quantity - 1);
+  };
+
+  const handleRemoveItem = () => {
+    removeCartItem(cart.id);
+    alert('삭제되었습니다');
   };
 
   return (
@@ -37,7 +42,9 @@ const CartCard = ({ cart }: { cart: Cart }) => {
         <h6>fee:무료</h6>
         <h6>주문 가격 : {cart.price * cart.quantity}</h6>
       </div>
-      <button className={style.btn}>X</button>
+      <button onClick={() => handleRemoveItem()} className={style.btn}>
+        X
+      </button>
     </li>
   );
 };
