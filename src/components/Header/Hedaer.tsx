@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import style from './Header.module.css';
+import { useLocation } from 'react-router-dom';
 
 const NAV_LINKS = [
   { name: 'home', link: '/' },
@@ -8,6 +9,8 @@ const NAV_LINKS = [
 ];
 
 const Hedaer = () => {
+  const location = useLocation();
+
   return (
     <header className={style.header}>
       <button className={style.btn}>Notification</button>
@@ -21,7 +24,16 @@ const Hedaer = () => {
           {NAV_LINKS.map((nav, i) => {
             return (
               <li key={i}>
-                <Link to={nav.link}>{nav.name}</Link>
+                <Link
+                  className={
+                    location.pathname === nav.link
+                      ? `${style.navItem} ${style.selected} `
+                      : `${style.navItem}`
+                  }
+                  to={nav.link}
+                >
+                  {nav.name}
+                </Link>
               </li>
             );
           })}

@@ -18,7 +18,11 @@
   gap: 1rem;
 }
 
-.nav ul li {
+.navItem {
   padding: 4px 10px;
   background-color: #f7f7f7;
+}
+
+.selected {
+  font-weight: 700;
 }
