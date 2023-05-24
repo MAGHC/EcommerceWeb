@@ -8,7 +8,7 @@ import {
   uploadBytes,
   listAll,
 } from 'firebase/storage';
-import { AddCartT } from '../scheme/cart';
+import { AddCartT, Cart } from '../scheme/cart';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -65,11 +65,19 @@ export async function addProduct(newProduct: NewProductType, imgs: Blob[]) {
   return res;
 }
 
-export async function addAndEditCart(cart: AddCartT) {
-  const quantity = 1;
-
+export async function addAndEditCart(cart: AddCartT, quantity: number = 1) {
   set(child(dbRef, `carts/user/${cart.id}`), {
     ...cart,
     quantity,
+  });
+}
+
+export async function getCart(): Promise<Cart[] | []> {
+  return await get(child(dbRef, 'carts/user')).then((snapshot) => {
+    if (snapshot.exists()) {
+      return Object.values(snapshot.val());
+    } else {
+      return [];
+    }
   });
 }
