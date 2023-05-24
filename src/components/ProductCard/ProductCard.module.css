@@ -2,6 +2,8 @@
   width: 296px;
   height: 392px;
   display: flex;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .container a {
