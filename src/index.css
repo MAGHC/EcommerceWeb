@@ -361,3 +361,28 @@ template {
 [hidden] {
   display: none;
 }
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
