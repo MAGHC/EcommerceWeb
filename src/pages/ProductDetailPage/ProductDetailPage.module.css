@@ -1,0 +1,30 @@
+.section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  text-align: center;
+  padding: 0 2rem;
+  width: 40%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.select {
+  width: 50%;
+  text-align: center;
+}
+
+.btn {
+  cursor: pointer;
+  padding: 1rem 7.5rem;
+  background-color: #03c75a;
+}
+
+.btn:hover {
+  color: white;
+}
