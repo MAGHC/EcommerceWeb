@@ -1,0 +1,36 @@
+.container {
+  padding: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.productSimpleDeatil {
+  display: flex;
+  align-items: center;
+  width: 300px;
+  gap: 2rem;
+}
+
+.productSimpleDeatil img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.optionSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fee {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn {
+  cursor: pointer;
+}
