@@ -8,6 +8,7 @@ import {
   uploadBytes,
   listAll,
 } from 'firebase/storage';
+import { AddCartT } from '../scheme/cart';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -62,4 +63,13 @@ export async function addProduct(newProduct: NewProductType, imgs: Blob[]) {
 
   const res = await set(child(dbRef, `products/${id}`), product);
   return res;
+}
+
+export async function addAndEditCart(cart: AddCartT) {
+  const quantity = 1;
+
+  set(child(dbRef, `carts/user/${cart.id}`), {
+    ...cart,
+    quantity,
+  });
 }
