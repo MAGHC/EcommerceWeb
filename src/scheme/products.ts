@@ -6,4 +6,5 @@ export type Product = {
   options: string[] | string;
   title: string;
   price: number;
+  categorie: string;
 };
