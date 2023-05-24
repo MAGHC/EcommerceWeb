@@ -1,4 +1,6 @@
 import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, get, child } from 'firebase/database';
+import { Product } from '../scheme/products';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -9,3 +11,17 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+const database = getDatabase();
+const dbRef = ref(getDatabase());
+
+export async function getAllProducts(): Promise<Product[] | []> {
+  return await get(child(dbRef, 'products')).then((snapshot) => {
+    if (snapshot.exists()) {
+      console.log(snapshot.val());
+      return snapshot.val();
+    } else {
+      console.log('no');
+      return [];
+    }
+  });
+}
