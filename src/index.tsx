@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Layout from './Layout';
 import reportWebVitals from './reportWebVitals';
-
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+
+import Layout from './Layout';
+import Home from './pages/Home/Home';
+
+const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
@@ -13,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <p>home page</p>,
+        element: <Home></Home>,
       },
       {
         path: '/admin',
@@ -28,7 +32,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>,
 );
 
