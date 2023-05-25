@@ -6,10 +6,14 @@ first of all, thank you for giving me this opportunity
 
 # Tech Stack 
 
-"react": "^18.2.0",   
+"react": "^18.2.0", 
+
 "react-query": "^3.39.3",
+
 "react-router-dom": "^6.11.2",
+
 "typescript": "^4.9.5",
+
 "firebase": "^9.22.0",   // backend API 
 
 
