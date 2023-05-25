@@ -14,7 +14,7 @@ first of all, thank you for giving me this opportunity
 
 
 # FOLDER TREE 
-
+```
 📦src
  ┣ 📂components
  ┃ ┣ 📂CartCard
@@ -56,7 +56,7 @@ first of all, thank you for giving me this opportunity
  ┣ 📜react-app-env.d.ts
  ┣ 📜reportWebVitals.ts
  ┗ 📜setupTests.ts
-
+```
 
 
 # List of feature implementations
